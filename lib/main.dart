@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stock_investment_app/presentation/assets/asset_index.dart';
+import 'package:stock_investment_app/presentation/pages/stocks_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,33 +11,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Stock Investment',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      useInheritedMediaQuery: true,
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        ScreenSize.setSizes();
+
+        return const MaterialApp(
+          title: 'Stock Investment App',
+          home: StocksPage(),
+        );
+      },
     );
   }
 }
-
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Stock Investment',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-      ),
-    );
-  }
-} 
