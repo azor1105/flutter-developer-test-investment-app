@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stock_investment_app/presentation/assets/asset_index.dart';
 
 class AppTextStyles {
   static const String _fontFamily = 'SFProText';
@@ -17,11 +18,10 @@ class AppTextStyles {
     letterSpacing: -0.5,
   );
 
-  static const TextStyle subtitle1 = TextStyle(
+  static TextStyle subtitle1 = TextStyle(
     fontFamily: _fontFamily,
     fontWeight: FontWeight.w600,
-    fontSize: 18,
-    letterSpacing: 0.15,
+    fontSize: 18.sp,
   );
 
   static const TextStyle subtitle2 = TextStyle(
@@ -45,11 +45,11 @@ class AppTextStyles {
     letterSpacing: 0.25,
   );
 
-  static const TextStyle caption = TextStyle(
+  static TextStyle caption = TextStyle(
     fontFamily: _fontFamily,
     fontWeight: FontWeight.w400,
-    fontSize: 12,
-    letterSpacing: 0.4,
+    color: BaseColors.textSecondary,
+    fontSize: 14.sp,
   );
 
   static const TextStyle button = TextStyle(
